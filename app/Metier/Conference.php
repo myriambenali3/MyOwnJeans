@@ -40,6 +40,16 @@ class Conference
         $this->descriptionConf = $descriptionConf;
     }
 
+    public function getImageConf()
+    {
+        return $this->imageConf;
+    }
+
+    public function setImageConf($imageConf)
+    {
+        $this->imageConf = $imageConf;
+    }
+
     public function getLesCommentaires()
     {
         return $this->lesCommentaires;

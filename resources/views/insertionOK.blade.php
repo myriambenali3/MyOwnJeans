@@ -1,19 +1,19 @@
 @extends('template')
 
 @section('titrePage')
-    Ajouter une conférence
+    Commande
 @endsection
 
 @section('titreItem')
-    <h1>Insertion  d'une conférence</h1>
+    <h1>Prendre une commande :</h1>
 @endsection
 
 @section('contenu')
     <div class="col-sm-offset-3 col-sm-6">
         <div class="card">
-            <div class="card-header">Confirmation Insertion</div>
+            <div class="card-header">Votre commande est validée</div>
             <div class="card-body">
-                L'insertion de l'enregistrement dans la table est confirmé.
+                Merci pour votre commande, nous vous contacterons sous un délai de 1 semaine.
             </div>
         </div>
     </div>

@@ -2,53 +2,53 @@
 
 namespace App\Modeles;
 use DB;
-use App\Metier\Conference;
+use App\Metier\Production;
 
-class ConferenceDAO extends DAO
+class ProductionDAO extends DAO
 {
 
-    public function getLesConferences()
+    public function getLesProductions()
     {
-        $conferences = DB::table('conference')->get();
-        $lesConferences = array();
-        foreach ($conferences as $laConference) {
-            $idConf = $laConference->idConf;
-            $lesConferences[$idConf] = $this->creerObjetMetier($laConference);
+        $productions = DB::table('production')->get();
+        $lesProductions = array();
+        foreach ($productions as $laProduction) {
+            $idProd = $laProduction->idProd;
+            $lesProductions[$idProd] = $this->creerObjetMetier($laProduction);
         }
-        return $lesConferences;
+        return $lesProductions;
     }
 
-    public function getConferenceById($idConf)
+   /* public function getConferenceById($idConf)
     {
         //On sélectionne une conference par son id.
         //La requête ne retournant qu'une seule occurrence, on utilise la méthode first de Querybuilder
         $maConference = DB::table('conference')->where('idConf', '=', $idConf)->first();
         $conference = $this->creerObjetMetier($maConference);
         return $conference;
-    }
+    }*/
 
     //
     protected function creerObjetMetier(\stdClass $objet)
     {
-        $laConference = new Conference();
-        $laConference->setIdConf($objet->idConf);
-        $laConference->setIntituleConf($objet->intituleConf);
-        $laConference->setDescriptionConf($objet->descriptionConf);
-        $laConference->setImageConf($objet->imageConf);
+        $laProduction = new Production();
+        $laProduction->setIdProd($objet->idProd);
+        $laProduction->setIntituleProd($objet->intituleProd);
+        $laProduction->setDescriptionProd($objet->descriptionProd);
+        $laProduction->setImageProd($objet->imageProd);
         //Il faut maintenant sélectionner les commentaires associés à la conférence
-        $commentaireDAO = new CommentaireDAO();
+       /* $commentaireDAO = new CommentaireDAO();
         $lesCommentaires = $commentaireDAO->getLesCommentaires($objet->idConf);
         //Si la conférence possède des commentaires
         if($lesCommentaires){
             //On modifie l'attribut lesCommentaires de la classe Conference
-            $laConference->setLesCommentaires($lesCommentaires);
+            $laProduction->setLesCommentaires($lesCommentaires);
         }
         else
-            $laConference->setLesCommentaires(null);
-        return $laConference;
+            $laProduction->setLesCommentaires(null);*/
+        return $laProduction;
     }
-
+/*
     public function creationConference(Conference $uneConference){
         DB::table('conference')->insert(['intituleConf'=>$uneConference->getIntituleConf(),'descriptionConf'=>$uneConference->getDescriptionConf()]);
-    }
+    }*/
 }

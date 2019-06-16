@@ -1,17 +1,26 @@
 @extends('template')
 
 @section('titrePage')
-    Les commentaires de la conférence
+    Commandes
 @endsection
 
 @section('titreItem')
-    <h1>Commentaires :</h1>
+    <h1>Commande :</h1> </br>
 @endsection
 
 @section('contenu')
-    <h2>{{$laConference->getIntituleConf()}}</h2>
-    <p>{{$laConference->getDescriptionConf()}}</p>
-    <h3>Commentaires :</h3>
+
+    <h2>{{$laBoutique->getIntituleBout()}}</h2>
+
+    @auth
+        <a href="{{ url('Commande') }}"> <input  class="bouton4" type="button" value="Commander"></a> </br>
+    @else
+     <p class="pcentre">  <a href="{{ route('login') }}">Connectez-vous</a> pour commander cet article ! </p>
+
+    @endauth
+    <p class="pcentre">{{$laBoutique->getDescriptionBout()}}</p>
+    <p><img src="{{ $laBoutique->getImageBout() }}" height="542" width="770" ></p>
+    <h3>Commandes :</h3>
     @if($lesCommentaires)
         @foreach ($lesCommentaires as $commentaire)
             <commentaire>
@@ -20,13 +29,9 @@
             </commentaire>
         @endforeach
     @else
-        <strong>Pas de commentaire enregistré</strong>
+        <strong>Pas de commande enregistré</strong>
     @endif
-    <h3>Ajouter un commentaire</h3>
-    @auth
-        La fonctionnalité sera bientôt fonctionnelle !
-    @else
-        <a href="{{ route('login') }}">Se connecter</a> pour ajouter un commentaire
 
-    @endauth
+
+
 @endsection

@@ -6,11 +6,11 @@ use DB;
 use App\Metier\AccueilSite;
 
 
-class FormationDAO extends DAO
+class AccueilSiteDAO extends DAO
 {
-    public function getLesFormations()
+    public function getLesAccueils()
     {
-        $accueils = DB::table('AccueilSite')->get();
+        $accueils = DB::table('accueilSite')->get();
         $lesAccueils = array();
         foreach ($accueils as $laccueil) {
             $idAcc = $laccueil->idAcc;

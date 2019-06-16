@@ -15,11 +15,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('Conferences','ConferenceController@getConferences');
-Route::get('ajoutConference','ConferenceController@ajoutConference');
-Route::post('saisieConference','ConferenceController@postAjoutConference');
-Route::get('Conference/{id}','ConferenceController@getConferenceById');
-Route::get('Formations','FormationController@getFormations');
+Route::get('Production','ProductionController@getProduction');
+Route::get('ajoutConference','ProductionController@ajoutConference');
+Route::post('saisieConference','ProductionController@postAjoutConference');
+Route::get('Conference/{id}','ProductionController@getConferenceById');
+Route::get('Accueil','AccueilSiteController@getAccueils');
+Route::get('Contacts','ContactsController@getContact');
+Route::get('Boutique','BoutiqueController@getBoutique');
+Route::get('Boutique/{id}','BoutiqueController@getBoutiqueById');
+Route::get('Tutoriel','TutorielController@getTutoriel');
+Route::get('Commande','CommandeController@ajoutCommande');
+Route::post('saisieCommande','CommandeController@postAjoutCommande');
 
 Auth::routes();
 

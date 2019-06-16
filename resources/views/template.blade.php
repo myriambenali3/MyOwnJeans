@@ -7,62 +7,52 @@
         <title>@yield('titrePage')</title>
     </head>
     <body>
+
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
         <div class="container">
 
-            <a class="navbar-brand" href="{{url('/Conferences')}}">MyOwnJeans - Le jean sur-mesure</a>
+            <a class="navbar-brand" href="{{url('/Accueil')}}">
+                <img class="logo"src="/web/FormawebV4/public/images/logo.png" height="100" width="100" >
+                <span>MyOwnJeans - Le Jeans sur-mesure</span>
+
+            </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="{{url('/Conferences')}}">Accueil
+                        <a class="nav-link" href="{{url('/Accueil')}}">Accueil
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="{{url('/Formations')}}">Collection
+                        <a class="nav-link" href="{{url('/Production')}}">La Production
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Notre Tutoriel
+                        <a class="nav-link" href="{{url('/Tutoriel')}}">Notre Tutoriel
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Contacts
+                        <a class="nav-link" href="{{url('/Boutique')}}">La Boutique
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">La Boutique
+                        <a class="nav-link" href="{{url('/Contacts')}}">Contacts
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown">
-                            Collection
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{{url('/Conferences')}}">Présentation</a>
-                            <a class="dropdown-item" href="{{url('/ajoutConference')}}">Boutique</a>
-                        </div>                         
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown">
 
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{{url('/Formations')}}">Liste des formations</a>
-                        </div>
-                    </li>
 
                     @auth
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown">
-                                Bienvenue,  {{ Auth::user()->name }}
+                                Bonjour,  {{ Auth::user()->name }}
                             </a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="{{ route('logout') }}"
@@ -77,14 +67,18 @@
                             </div>
                         </li>
                     @else
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="" id="navbardrop" data-toggle="dropdown">
-                                Se connecter
+
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{{route('login')}}">Se connecter
+                                <span class="sr-only">(current)</span>
                             </a>
-                            <div class="dropdown-menu">
-                                <a href="{{ route('login') }}">Se Connecter</a>
-                            </div>
                         </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{{url('register')}}">Nouveau Compte
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        
                     @endauth
 
 
@@ -98,7 +92,9 @@
     @yield('contenu')
 
     <footer class="footer">
-        <p>MyOwnJeans est un petit site web construit comme exemple de développement moderne en php</p>
+        <p>MyOwnJeans © 2019</p>
+        <p>Tous droits réservés</p>
+        <p>Myriam Benali et Cécile Besson</p>
     </footer>
     {!! Html::script('lib/jquery/jquery-3.3.1.slim.min.js') !!}
     {!! Html::script('lib/js/bootstrap.bundle.js') !!}

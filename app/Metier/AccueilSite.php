@@ -6,39 +6,49 @@ namespace App\Metier;
 
 class AccueilSite
 {
-    private $idAccueil;
+    private $idAcc;
     private $intituleAcc;
     private $descriptionAcc;
-    private $getimageAcc;
+    private $imageAcc;
 
-    public function getIdForm()
+    public function getIdAcc()
     {
-        return $this->idForm;
+        return $this->idAcc;
     }
 
-    public function setIdForm($idForm)
+    public function setIdAcc($idAcc)
     {
-        $this->idForm = $idForm;
+        $this->idAcc = $idAcc;
     }
 
-    public function getIntituleForm()
+    public function getIntituleAcc()
     {
-        return $this->intituleForm;
+        return $this->intituleAcc;
     }
 
-    public function setIntituleForm($intituleForm)
+    public function setIntituleAcc($intituleAcc)
     {
-        $this->intituleForm = $intituleForm;
+        $this->intituleAcc = $intituleAcc;
     }
 
-    public function getDescriptionForm()
+    public function getDescriptionAcc()
     {
-        return $this->descriptionForm;
+        return $this->descriptionAcc;
     }
 
-    public function setDescriptionForm($descriptionForm)
+    public function setDescriptionAcc($descriptionAcc)
     {
-        $this->descriptionForm = $descriptionForm;
+        $this->descriptionAcc = $descriptionAcc;
+    }
+
+    public function getImageAcc()
+    {
+        return $this->imageAcc;
+    }
+
+    public function setImageAcc($imageAcc)
+    {
+        $this->imageAcc = $imageAcc;
     }
 
 

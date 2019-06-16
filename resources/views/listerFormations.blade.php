@@ -1,19 +1,22 @@
 @extends('template')
 
 @section('titrePage')
-    La collection
+    Notre collection
 @endsection
 
 @section('titreItem')
-    <h1>La collection</h1>
+    <h1>Accueil</h1>
 @endsection
 
 @section('contenu')
-    @foreach ($lesFormations as $formation)
-        <formation>
+    <p>MOJ, Bellecour</p>
+    </br>
+    @foreach ($lesAccueils as $accueil)
+        <accueil>
           <?php  /*<h2>{{ $formation->getIdForm() }} {{ $formation->getIntituleForm() }}</h2> */?>
-              <h2> {{ $formation->getIntituleForm() }}</h2>
-            <p>{{ $formation->getDescriptionForm() }}</p>
-        </formation>
+              <h2> {{ $accueil->getIntituleAcc() }}</h2>
+            <p>{{ $accueil->getDescriptionAcc() }}</p>
+        </br>
+        </accueil>
     @endforeach
 @endsection

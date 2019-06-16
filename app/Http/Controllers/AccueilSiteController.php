@@ -7,12 +7,12 @@ use App\Modeles\AccueilSiteDAO;
 
 use Illuminate\Http\Request;
 
-class FormationController extends Controller
+class AccueilSiteController extends Controller
 {
     //
-    public function getFormations(){
-        $formation = new AccueilSiteDAO();
-        $lesFormations = $formation->getLesFormations();
-        return view('listerFormations',compact('lesFormations'));
+    public function getAccueils(){
+        $accueil = new AccueilSiteDAO();
+        $lesAccueils = $accueil->getLesAccueils();
+        return view('accueilSite',compact('lesAccueils'));
     }
 }
