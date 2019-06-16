@@ -34,6 +34,7 @@ class ConferenceDAO extends DAO
         $laConference->setIdConf($objet->idConf);
         $laConference->setIntituleConf($objet->intituleConf);
         $laConference->setDescriptionConf($objet->descriptionConf);
+        $laConference->setImageConf($objet->imageConf);
         //Il faut maintenant sélectionner les commentaires associés à la conférence
         $commentaireDAO = new CommentaireDAO();
         $lesCommentaires = $commentaireDAO->getLesCommentaires($objet->idConf);
