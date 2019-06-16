@@ -4,11 +4,12 @@
 namespace App\Metier;
 
 
-class Formation
+class AccueilSite
 {
-    private $idForm;
-    private $intituleForm;
-    private $descriptionForm;
+    private $idAccueil;
+    private $intituleAcc;
+    private $descriptionAcc;
+    private $getimageAcc;
 
     public function getIdForm()
     {
